@@ -1,0 +1,165 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: #f4f4f4;
+    height: 100vh;  /* Ensures the body covers the full viewport height */
+  }
+  
+  /* Container Styles */
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px; /* Set max width for large screens */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+  }
+  
+  /* Heading Style */
+  h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #414141;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  
+
+/* Login Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+   
+  }
+
+  /* Login Card */
+.login-card {
+    background: #fff;
+    padding: 40px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Max width for the card */
+    text-align: center;
+  }
+
+  /* Input Fields */
+  input {
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #ff5722;
+    transform: scale(1.02);
+  }
+  
+  input::placeholder {
+    color: #aaa;
+    transition: color 0.3s ease;
+  }
+  
+  input:focus::placeholder {
+    color: #ff5722;
+    transform: translateY(-5px);
+  }
+  
+  /* Button Styles */
+  button {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    background: #007bff; /* Adjusted to a more vibrant blue */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+  }
+  
+  button:hover {
+    background: #0056b3; /* Darker blue for hover effect */
+    transform: scale(1.05);
+  }
+  
+  button span {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  button:hover span {
+    transform: translateY(-50%) translateX(10px);
+  }
+  
+  /* Link Styles */
+  .link {
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    text-transform: uppercase;
+    color: #858585;
+    text-align: center;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .link:hover {
+    color: #007bff; /* Matches button color for consistency */
+  }
+  
+  /* Footer Text */
+  footer {
+    font-size: 0.8rem;
+    color: #aaa;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  footer a:hover {
+    color: #0056b3;
+  }
+  .success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+  }
+  
