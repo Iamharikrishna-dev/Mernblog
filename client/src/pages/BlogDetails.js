@@ -84,7 +84,7 @@ const BlogDetails = () => {
   };
 
   const handleShare = () => {
-    const shareUrl = `${window.location.origin}/blog/${id}`;
+    const shareUrl = `${window.location.origin}/blogs/${id}`;
     navigator.clipboard.writeText(shareUrl);
     alert('Blog URL copied to clipboard!');
   };
