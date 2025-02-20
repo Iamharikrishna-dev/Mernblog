@@ -13,7 +13,7 @@ const ShareOptions = ({ blogId, closeDropdown }) => {
   const shareRef = useRef();
 
   // ✅ Ensure `shareUrl` is valid
-  const shareUrl = blogId ? `${window.location.origin}/blog/${blogId}` : null;
+  const shareUrl = blogId ? `${window.location.origin}/blogs/${blogId}` : null;
 
   useEffect(() => {
     const handleClickOutside = (event) => {
