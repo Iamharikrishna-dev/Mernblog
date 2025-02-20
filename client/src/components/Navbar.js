@@ -76,8 +76,9 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
           </Link>
         )}
 
-        {/* ✅ Only Show Profile If Logged In */}
-        {isLoggedIn && (
+        {/* ✅ Show Either Profile OR Login Icon (Not Both) */}
+        {isLoggedIn ? (
+          // ✅ Profile Icon (Only when logged in)
           <div ref={profileRef} className="profile-container">
             <img
               src={profileIc}
@@ -106,10 +107,8 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
               </div>
             )}
           </div>
-        )}
-
-        {/* Show Login Button if Not Logged In */}
-        {!isLoggedIn && (
+        ) : (
+          // ✅ Login Icon (Only when NOT logged in)
           <Link to="/login">
             <img src={loginIc} alt="login Icon" width="40" height="40" />
           </Link>
