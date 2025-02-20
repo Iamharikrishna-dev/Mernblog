@@ -32,7 +32,7 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
-  // ✅ Close navbar & profile dropdown when clicking outside (works on mobile too)
+  // ✅ Close navbar & profile dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -76,25 +76,43 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
           </Link>
         )}
 
-        {isLoggedIn ? (
-          <>
-            <div className="profile-container">
-              <img src={profileIc} alt="Profile Icon" width="40" height="40" onClick={toggleProfile} className="profile-icon" />
-              {profileOpen && (
-                <div className="profile-dropdown">
-                  <p><img src={nameIc} alt="logout Icon" width="40" height="40" /> {userInfo?.username}</p>
-                  <p><img src={emailIc} alt="logout Icon" width="40" height="40" /> {userInfo?.email}</p>
-                  <button className="logout-button" onClick={logoutHandler}>
-                    <img src={logoutIc} alt="logout Icon" width="40" height="40" /> Logout
-                  </button>
-                </div>
-              )}
-            </div>
-          </>
-        ) : (
-          <>
-            <Link to="/login"><img src={loginIc} alt="login Icon" width="40" height="40" /></Link>
-          </>
+        {/* ✅ Only Show Profile If Logged In */}
+        {isLoggedIn && (
+          <div ref={profileRef} className="profile-container">
+            <img
+              src={profileIc}
+              alt="Profile Icon"
+              width="40"
+              height="40"
+              onClick={toggleProfile}
+              className="profile-icon"
+            />
+
+            {/* Profile Dropdown */}
+            {profileOpen && (
+              <div className="profile-dropdown">
+                <p>
+                  <img src={nameIc} alt="User" width="40" height="40" />{" "}
+                  {userInfo?.username}
+                </p>
+                <p>
+                  <img src={emailIc} alt="Email" width="40" height="40" />{" "}
+                  {userInfo?.email}
+                </p>
+                <button className="logout-button" onClick={logoutHandler}>
+                  <img src={logoutIc} alt="Logout" width="40" height="40" />{" "}
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Show Login Button if Not Logged In */}
+        {!isLoggedIn && (
+          <Link to="/login">
+            <img src={loginIc} alt="login Icon" width="40" height="40" />
+          </Link>
         )}
       </div>
     </nav>
