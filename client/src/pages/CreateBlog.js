@@ -49,7 +49,7 @@ const CreateBlog = () => {
 
   return (
     <form onSubmit={submitHandler} className="create-blog-form">
-     Title
+  <h2>Write a Blog</h2>
       <input
         type="text"
         placeholder="Title"
