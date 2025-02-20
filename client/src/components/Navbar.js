@@ -96,26 +96,6 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
             <Link to="/login"><img src={loginIc} alt="login Icon" width="40" height="40" /></Link>
           </>
         )}
-{isLoggedIn ? (
-          <>
-            <div className="profile-container">
-              <img src={profileIc} alt="Profile Icon" width="40" height="40" onClick={toggleProfile} className="profile-icon" />
-              {profileOpen && (
-                <div className="profile-dropdown">
-                  <p><img src={nameIc} alt="logout Icon" width="40" height="40" /> {userInfo?.username}</p>
-                  <p><img src={emailIc} alt="logout Icon" width="40" height="40" /> {userInfo?.email}</p>
-                  <button className="logout-button" onClick={logoutHandler}>
-                    <img src={logoutIc} alt="logout Icon" width="40" height="40" /> Logout
-                  </button>
-                </div>
-              )}
-            </div>
-          </>
-        ) : (
-          <>
-            <Link to="/login"><img src={loginIc} alt="login Icon" width="40" height="40" /></Link>
-          </>
-        )}
       </div>
     </nav>
   );
