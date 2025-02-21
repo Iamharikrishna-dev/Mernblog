@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       <p>&copy; 2025 Blogiverse. All Rights Reserved.</p>
-      <p>Harikrishna</p>
+      <a href="https://harikrishnaportfolio.vercel.app/#contact" target="_blank" rel="noopener noreferrer">📝 Harikrishna</a>
     </footer>
   );
 };
