@@ -162,4 +162,15 @@
     border: 1px solid #c3e6cb;
     border-radius: 5px;
   }
+
+  .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #858585;
+  }
   
+  .remember-me input {
+    margin-right: 10px;
+    width: 15px;
+  }
