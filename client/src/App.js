@@ -14,12 +14,12 @@ import './App.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    return !!localStorage.getItem('userInfo'); // Check login state from localStorage
+    return !!localStorage.getItem('userInfo') || !!sessionStorage.getItem('userInfo'); // Check login state from localStorage or sessionStorage
   });
 
   useEffect(() => {
     const handleStorageChange = () => {
-      setIsLoggedIn(!!localStorage.getItem('userInfo')); // Update login state on storage change
+      setIsLoggedIn(!!localStorage.getItem('userInfo') || !!sessionStorage.getItem('userInfo')); // Update login state on storage change
     };
 
     window.addEventListener('storage', handleStorageChange); // Sync across tabs
