@@ -395,19 +395,21 @@ button:hover {
 /* Pagination */
 .pagination {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the pagination on the screen */
   align-items: center;
-  margin: 20px 0;
+  margin: 10px 0;
+ 
 }
 
 .pagination button {
-  padding: 8px 16px;
+  padding: 5px 10px;
   border: 1px solid #ddd;
   background-color: #f9f9f9;
   color: #333;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 5px; /* Add margin for better spacing */
 }
 
 .pagination button:hover {
@@ -423,6 +425,7 @@ button:hover {
 .pagination-numbers {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .pagination-numbers button {
@@ -438,4 +441,47 @@ button:hover {
 .pagination .side-button {
   font-weight: bold;
   font-size: 14px;
+  margin: 0 10px; /* Add margin for better spacing */
+}
+
+.pagination-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 20px; /* Add margin for better spacing */
+}
+
+.pagination-input input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+.pagination-input label,
+.pagination-input span {
+  font-weight: bold;
+  white-space: nowrap; /* Ensure the text stays on a single line */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pagination {
+    justify-content: center; /* Center the pagination on smaller screens */
+  }
+
+  .pagination button {
+    padding: 10px 20px; /* Increase padding for better touch targets */
+    font-size: 16px; /* Increase font size for better readability */
+  }
+
+  .pagination-numbers {
+    justify-content: center; /* Center the pagination numbers on smaller screens */
+  }
+
+  .pagination-input {
+    justify-content: center; /* Center the pagination input on smaller screens */
+  }
 }
