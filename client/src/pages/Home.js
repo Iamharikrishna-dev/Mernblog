@@ -111,6 +111,13 @@ const Home = ({ isLoggedIn }) => {
     }
   };
 
+  const handlePageInputChange = (e) => {
+    const page = parseInt(e.target.value, 10);
+    if (!isNaN(page) && page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
   const toggleShareDropdown = (blogId) => {
     setShareDropdownOpen(shareDropdownOpen === blogId ? null : blogId);
   };
@@ -126,7 +133,7 @@ const Home = ({ isLoggedIn }) => {
               )}
 
               <h2>{blog.title}</h2>
-              <div class="blog-cin">
+              <div className="blog-cin">
                 {(() => {
                   try {
                     const contentState = convertFromRaw(JSON.parse(blog.content));
@@ -200,24 +207,24 @@ const Home = ({ isLoggedIn }) => {
         >
           Previous
         </button>
-        <div className="pagination-numbers">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index}
-              onClick={() => handlePageChange(index + 1)}
-              className={currentPage === index + 1 ? 'active' : ''}
-            >
-              {index + 1}
-            </button>
-          ))}
-        </div> 
-    
+        <div className="pagination-input">
+          <label htmlFor="page-number">Page</label>
+          <input
+            type="number"
+            id="page-number"
+            value={currentPage}
+            onChange={handlePageInputChange}
+            min="1"
+            max={totalPages}
+          />
+          <span>of {totalPages}</span>
+        </div>
         <button
           className="side-button"
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-        >  
-           Next
+        >
+          Next
         </button>
       </div>
 
