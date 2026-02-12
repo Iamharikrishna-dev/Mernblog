@@ -4,7 +4,7 @@ import axios from "axios";
 
 const MyBlogs = () => {
   const [blogs, setBlogs] = useState([]);
-  const [loading, setLoading] = useState(true);  // Change `useState(true)` to `loading` state variable
+  const [loading] = useState(true);  // Change `useState(true)` to `loading` state variable
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 

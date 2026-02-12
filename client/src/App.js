@@ -6,7 +6,6 @@ import BlogDetails from './pages/BlogDetails';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import CreateBlog from './pages/CreateBlog';
-import Header from './components/Header';
 import Footer from './components/Footer';
 import EditProfile from "./components/EditProfile";
 import MyBlogs from "./components/MyBlogs";

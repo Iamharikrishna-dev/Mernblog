@@ -184,6 +184,11 @@ const Home = ({ isLoggedIn }) => {
                     : '❤️ Like'}{' '}
                   {Array.isArray(blog.likes) ? blog.likes.length : 0}
                 </button>
+
+                <button onClick={() => openCommentsModal(blog)}>
+                    💬 Comments ({blog.comments?.length || 0})
+                </button>
+                
                 <button onClick={() => toggleShareDropdown(blog._id)}>
                   🔗 Share
                 </button>
